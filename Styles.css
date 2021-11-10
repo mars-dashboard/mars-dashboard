@@ -1,19 +1,18 @@
 body {
   margin: 0;
   padding: 0;
-  color: white;
+  color: rgb(156, 35, 167);
   box-sizing: border-box;
   font-family: monospace;
   font-size: 15px;
 }
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 50px 1fr 50px;
-
+  grid-template-columns: 125px 1fr;
+  grid-template-rows: 50px 2fr;
   grid-template-areas:
-    'main'
-    'footer';
+    'aside main'
+    'aside main';
   height: 100vh;
 }
 
@@ -25,20 +24,6 @@ body {
 .main {
   grid-area: main;
   background-color: white;
-}
-.footer {
-  grid-area: footer;
-  background-color: whitesmoke;
-}
-
-/* flexing header and footer*/
-
-.footer {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  color: darkblue;
-  padding: 0 15px;
 }
 
 /* flexing aside */
@@ -78,7 +63,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-bottom: 1px solid lightgreen;
+  border-bottom: 1px solid rgb(144, 238, 147);
 }
 .overview_card {
   flex-basis: 250px;
@@ -127,12 +112,12 @@ body {
 @media only screen and (min-width: 750px) {
   .grid-container {
     display: grid;
-    grid-template-columns: 240px 1fr;
-    grid-template-rows: 50px 1fr 50px;
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 50px 1fr 1fr;
     grid-template-areas:
-      'aside header'
       'aside main'
-      'aside footer';
+      'aside main'
+      'aside main';
     height: 100vh;
   }
 
