@@ -5,12 +5,14 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   font-size: 15px;
+  background-image: url('marsimage.jpg');
 }
 .grid-container {
   display: grid;
   grid-template-columns: 125px 1fr;
-  grid-template-rows: 50px 2fr;
+  grid-template-rows: 50px 2fr 1fr;
   grid-template-areas:
+    'aside main'
     'aside main'
     'aside main';
   height: 100vh;
@@ -23,7 +25,8 @@ body {
 
 .main {
   grid-area: main;
-  background-color: white;
+  /*background-color: white;*/
+  background-image: url('marsimage.jpg');
 }
 
 /* flexing aside */
@@ -63,7 +66,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  border-bottom: 1px solid rgb(144, 238, 147);
+  /* border-bottom: 1px solid rgb(144, 238, 147); */
 }
 .overview_card {
   flex-basis: 250px;
@@ -75,27 +78,31 @@ body {
   padding: 20px;
   /* background-color: seagreen; */
   height: 100px;
-  border: 1px solid darkblue;
+  border: 1px solid rgb(70, 70, 79);
   border-radius: 4px;
-  color: rgb(21, 139, 0);
+  color: rgb(62, 82, 59);
+  background-color: white;
 }
 /* Layout for main-cards section // below main_overview */
 .main_cards {
   margin: 10px;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 500px 200px 300px;
+  /*grid-template-rows: 500px 200px 300px;*/
+  grid-template-rows: 2fr 1fr 3fr;
   grid-template-areas:
     'card1'
     'card2'
-    'card3';
+    'card3'
+    'card4';
   grid-gap: 10px;
 }
 .card {
   padding: 20px;
-  border: 1px solid tomato;
+  border: 1px solid rgb(50, 49, 48);
   border-radius: 4px;
-  color: tomato;
+  color: rgb(106, 30, 16);
+  background-color: white;
 }
 
 .card:first-child {
@@ -106,6 +113,9 @@ body {
 }
 .card:nth-child(3) {
   grid-area: card3;
+}
+.card:nth-child(4) {
+  grid-area: card4;
 }
 
 /* responsive layout */
@@ -131,11 +141,11 @@ body {
   .main_cards {
     margin: 10px;
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: 200px 300px;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 200px 400px;
     grid-template-areas:
-      'card1 card2'
-      'card1 card3';
+      'card1 card2 card3'
+      'card1 card4 card4';
     grid-gap: 10px;
   }
 }
@@ -151,10 +161,6 @@ body {
   cursor: pointer;
   padding: 12px;
   color: black;
-}
-
-.header_search {
-  margin-left: 24px;
 }
 
 .aside_close-icon {
