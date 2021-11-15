@@ -3,6 +3,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Styles.css" />
+    <script defer src="mars.js"></script>
     <title>Building dashboard with gird and flex</title>
   </head>
   <body>
@@ -43,34 +44,16 @@
         </div>
 
         <div class="main_cards">
-          <div class="card">MARS IMAGES</div>
-          <div class="card">WIND DATA</div>
+          <div class="card" id="content">
+          </div>
+          <div class="card">stuff
+           <!-- <input id="searchTerm" type="text" placeholder="Enter search term"/>-->
+          </div>
           <div class="card">GRAPH</div>
           <div class="card">EARTH IMAGES</div>
         </div>
       </main>
     </div>
-    <script type="text/javascript">
-      const menuIcon = document.querySelector('.menu-icon');
-      const aside = document.querySelector('.aside');
-      const asideClose = document.querySelector('.aside_close-icon');
-
-      function toggle(el, className) {
-        if (el.classList.contains(className)) {
-          el.classList.remove(className);
-        } else {
-          el.classList.add(className);
-        }
-      }
-
-      menuIcon.addEventListener('click', function() {
-        toggle(aside, 'active');
-      });
-
-      asideClose.addEventListener('click', function() {
-        toggle(aside, 'active');
-      });
-    </script>
   </body>
 </html>
 
