@@ -32,6 +32,7 @@ body {
 img {
   height: 100%;
   width: 100%;
+  display: block;
 }
 
 /* flexing aside */
@@ -110,6 +111,50 @@ img {
   background-color: white;
 }
 
+/* overlay stuff*/
+.image_overlay1 {
+  margin-top: 0%;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90%;
+  height: 84%;
+  background: rgba(0, 0, 0, 0.8);
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+  padding: 5%;
+  border-radius: 2px;
+}
+
+.image_overlay1 > * {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.image_overlay1:hover > * {
+  transform: translateY(0);
+}
+
+.image_overlay1:hover {
+  opacity: 1;
+}
+
+.project1 {
+  position: relative;
+  font-family: sans-serif;
+}
+
+.project1 a {
+  text-decoration: underline;
+  color: #ffffff;
+  font-weight: bold;
+}
+
 .card:first-child {
   grid-area: card1;
 }
@@ -175,6 +220,7 @@ img {
   right: 20px;
   cursor: pointer;
 }
+
 @media only screen and (min-width: 750px) {
   .aside_close-icon {
     display: none;

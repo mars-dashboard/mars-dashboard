@@ -26,5 +26,6 @@ async function sendImageRequest(){
 
 function useImageData(data){
 document.querySelector("#imagecontent").innerHTML+=`<img src="${data.url}">`
+document.querySelector("#text1").innerHTML+=data.explanation
 }
 
