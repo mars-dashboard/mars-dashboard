@@ -168,6 +168,12 @@ img {
   grid-area: card4;
 }
 
+.cardNews .search {
+  display: block;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
 /* responsive layout */
 @media only screen and (min-width: 750px) {
   .grid-container {
