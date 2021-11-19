@@ -5,16 +5,16 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   font-size: 15px;
-  background-image: url('stars.jpeg');
+  background-image: url("stars.jpeg");
 }
 .grid-container {
   display: grid;
   grid-template-columns: 125px 1fr;
   grid-template-rows: 50px 2fr 1fr;
   grid-template-areas:
-    'aside main'
-    'aside main'
-    'aside main';
+    "aside main"
+    "aside main"
+    "aside main";
   height: 100vh;
 }
 
@@ -25,6 +25,11 @@ body {
 
 .main {
   grid-area: main;
+<<<<<<< HEAD
+=======
+  /*background-color: white;*/
+  background-image: url("marsimage.jpg");
+>>>>>>> 12cf1755820a2fbaa9bc3aa42097f40a1fc8cfb5
 }
 
 img {
@@ -77,6 +82,7 @@ img {
   flex-grow: 1;
   margin: 10px 10px;
   display: flex;
+  flex-flow: column wrap;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
@@ -95,10 +101,10 @@ img {
   /*grid-template-rows: 500px 200px 300px;*/
   grid-template-rows: 2fr 1fr 3fr;
   grid-template-areas:
-    'card1'
-    'card2'
-    'card3'
-    'card4';
+    "card1"
+    "card2"
+    "card3"
+    "card4";
   grid-gap: 10px;
 }
 .card {
@@ -183,9 +189,9 @@ img {
     grid-template-columns: 150px 1fr;
     grid-template-rows: 50px 1fr 1fr;
     grid-template-areas:
-      'aside main'
-      'aside main'
-      'aside main';
+      "aside main"
+      "aside main"
+      "aside main";
     height: 100vh;
   }
 
@@ -202,8 +208,8 @@ img {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 200px 400px;
     grid-template-areas:
-      'card1 card2 card3'
-      'card1 card4 card4';
+      "card1 card2 card3"
+      "card1 card4 card4";
     grid-gap: 10px;
   }
 }
