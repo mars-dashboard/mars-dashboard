@@ -1,4 +1,3 @@
-/*let searchButton = document.querySelector("#search")*/
 
 sendAPIRequest()
 sendImageRequest()
@@ -29,3 +28,40 @@ document.querySelector("#imagecontent").innerHTML+=`<img src="${data.url}">`
 document.querySelector("#text1").innerHTML+=data.explanation
 }
 
+const searchFrom = document.querySelector('.search')
+const input = document.querySelector('.input')
+const newsList = document.querySelector('.news-list')
+
+searchFrom.addEventListener('submit',retrieve)
+
+function retrieve(e){
+    if(input.value== ''){
+        alert('empty field, try again')
+        return
+    }
+
+newsList.innerHTML=''
+e.preventDefault()
+const apiKey='65087e8bae01419a8d4f35328043f0ca'
+let topic = input.value;
+  
+let url =`https://newsapi.org/v2/everything?q=${topic}&from=2021-10-19&sortBy=publishedAt&apiKey=${apiKey}`
+
+fetch(url).then((res)=>{
+    return res.json()
+}).then((data)=>{
+console.log(data)
+
+data.articles.forEach(article=>{
+    let li = document.createElement('li');
+    let a = document.createElement('a');
+    a.setAttribute('href',article.url);
+    a.setAttribute('targer','_blank');
+    a.textContent=article.title;
+    li.appendChild(a);
+    newsList.appendChild(li)
+})
+}).catch((error)=>{
+    console.log(error)
+})
+}
