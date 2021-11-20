@@ -1,3 +1,20 @@
+const sections = [ 'Home', 'PageOne', 'PageTwo', 'PageThree', 'PageFour']
+function pageLoad ()
+{
+    showSection(1);
+}
+function showSection (sectionIdx)
+{
+    sections.forEach((section, idx)=>{
+        if (sectionIdx===idx)
+        {
+            $("#"+section).show();
+        }
+        else {
+            $("#"+section).hide();
+        }
+    });
+}
 
 sendAPIRequest()
 sendImageRequest()

@@ -33,6 +33,48 @@ img {
   display: block;
 }
 
+nav {
+  float: left;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li {
+  display: inline-block;
+  position: relative;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 15px;
+  width: 100%;
+}
+
+nav a:hover {
+  color: white;
+}
+
+nav a::before {
+  content: '';
+  display: block;
+  background-color: white;
+  height: 6px;
+  width: 0%;
+  position: absolute;
+  top: 0%;
+  transition: all ease-in-out 250ms;
+}
+
+nav a:hover::before {
+  width: 100%;
+}
+
 /* flexing aside */
 .aside {
   display: flex;
@@ -56,22 +98,19 @@ img {
 }
 
 .aside_list-item {
-  padding: 20px 20px 20px 40px;
-  color: #ddd;
+  float: left;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
 }
-
-.aside_list-item:hover {
-  background-color: royalblue;
-  cursor: pointer;
-}
-
 /* Layout for main content overview  and its cards*/
 .main_overview {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  /* border-bottom: 1px solid rgb(144, 238, 147); */
 }
+
 .overview_card {
   flex-basis: 250px;
   flex-grow: 1;
@@ -113,7 +152,6 @@ img {
 /* overlay stuff*/
 .image_overlay1 {
   margin-top: 0%;
-
   position: absolute;
   top: 0;
   left: 0;

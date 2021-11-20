@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -7,23 +8,37 @@
     <script defer src="weather.js"></script>
     <title>Building dashboard with gird and flex</title>
   </head>
-  <body>
-    <div class="grid-container">
-      <div class="menu-icon">
-        <strong> &#9776;</strong>
-      </div>
-      <aside class="aside">
-        <div class="aside_close-icon">
-          <strong>&times;</strong>
-        </div>
-        <ul class="aside_list">
-          <li class="aside_list-item">item1</li>
-          <li class="aside_list-item">item2</li>
-          <li class="aside_list-item">item3</li>
-          <li class="aside_list-item">item4</li>
-          <li class="aside_list-item">item5</li>
-        </ul>
-      </aside>
+  
+  <body onload = 'pageLoad()'>
+    
+      <div class="grid-container">
+
+          <div class="menu-icon">
+            <strong> &#9776;</strong>
+          </div>
+
+          <aside class="aside">
+            <div class="aside_close-icon">
+              <strong>&times;</strong>
+            </div>
+          <nav>
+            <ul class="aside_list">
+              <li class="aside_list-item">
+                <a class ="link" href = "javascript:showSection(0)">Home</a>
+              </li>
+              <li class="aside_list-item">
+                <a class ="link" href = "javascript:showSection(2)" >Page 1</a>
+              </li>
+              <li class="aside_list-item">
+                <a class ="link" href = "javascript:showSection(3)" >Page 2</a>
+              </li>
+              <li class="aside_list-item">
+                <a class ="link" href = "javascript:showSection(1)" >Page 3</a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+
       <main class="main">
         <div class="main_overview">
           <div class="overview_card weather_box"></div>
@@ -56,5 +71,7 @@
         </div>
       </main>
     </div>
+
+
   </body>
 </html>
