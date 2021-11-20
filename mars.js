@@ -1,7 +1,7 @@
 const sections = [ 'Home', 'PageOne', 'PageTwo', 'PageThree', 'PageFour']
 function pageLoad ()
 {
-    showSection(1);
+    showSection(0);
 }
 function showSection (sectionIdx)
 {
