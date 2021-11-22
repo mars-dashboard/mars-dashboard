@@ -102,3 +102,28 @@ data.articles.forEach(article=>{
     console.log(error)
 })
 }
+
+function h_to_hms(h) {
+    var x = h * 3600;
+    var hh = Math.floor(x / 3600);
+    if (hh < 10) hh = "0" + hh;
+    var y = x % 3600;
+    var mm = Math.floor(y / 60);
+    if (mm < 10) mm = "0" + mm;
+    var ss = Math.round(y % 60);
+    if (ss < 10) ss = "0" + ss;
+    return hh + ":" + mm + ":" + ss;
+  }
+  
+  setInterval(function(){
+    var tai_offset = 37;
+    var date = new Date();
+    var millis = date.getTime();
+    var jd_ut = 2440587.5 + (millis / 8.64E7);
+    var jd_tt = jd_ut + (tai_offset + 32.184) / 86400;
+    var j2000 = jd_tt - 2451545.0;
+    var msd = (((j2000 - 4.5) / 1.027491252) + 44796.0 - 0.00096);
+    var mtc = (24 * msd) % 24;
+  
+    document.querySelector('p.time').innerText = h_to_hms(mtc);
+  }, 100);
