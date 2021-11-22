@@ -1,6 +1,7 @@
 const sections = [ 'Home', 'PageOne', 'PageTwo', 'PageThree', 'PageFour']
 function pageLoad ()
 {
+    //alert("pageLoad");
     showSection(0);
 }
 function showSection (sectionIdx)
@@ -18,18 +19,37 @@ function showSection (sectionIdx)
 
 sendAPIRequest()
 sendImageRequest()
-
+var imageIndex=0;
+var GV_IMAGES=[];
+var imageCount=4;
+function imageTimer()
+{
+    ++imageIndex;
+    console.log ("count", imageCount);
+    if (imageIndex===imageCount)
+    {
+        //alert("reset");
+        imageIndex=0;   
+    }
+    console.log(imageIndex);
+    usaApiData(GV_IMAGES);
+    setTimeout(imageTimer, 10000);
+}
 async function sendAPIRequest(){
     let API_KEY= "8w2DmOrxvNdghKOLw0yFdBW0JiXptiUTXd1OZkcS"
     let response = await fetch('https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=8w2DmOrxvNdghKOLw0yFdBW0JiXptiUTXd1OZkcS');
     console.log(response)
     let data =await response.json()
+    GV_IMAGES=data;
+   imageCount=data.photos.length;
+console.log("IMAGE COUNT", imageCount);
     console.log(data)
+    setTimeout(imageTimer, 10000);
     usaApiData(data)
 }
 
 function usaApiData(data){
-document.querySelector("#content").innerHTML+=`<img src="${data.photos[0].img_src}">`
+document.querySelector("#content").innerHTML=`<img src="${data.photos[imageIndex].img_src}">`
 }
 
 async function sendImageRequest(){
@@ -59,10 +79,10 @@ function retrieve(e){
 
 newsList.innerHTML=''
 e.preventDefault()
-const apiKey='65087e8bae01419a8d4f35328043f0ca'
+const apiKey='7cccceb97d484307a45768488a0e7c3f'
 let topic = input.value;
   
-let url =`https://newsapi.org/v2/everything?q=${topic}&from=2021-10-19&sortBy=publishedAt&apiKey=${apiKey}`
+let url =`https://newsapi.org/v2/everything?q=${topic}&from=2021-11-15&sortBy=publishedAt&apiKey=7cccceb97d484307a45768488a0e7c3f`
 
 fetch(url).then((res)=>{
     return res.json()

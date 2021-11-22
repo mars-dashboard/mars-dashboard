@@ -4,12 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Styles.css" />
+    <style>
+      .pageClass{
+        position:absolute;
+        top:10px;
+        left:200px;
+        color:white;
+      }
+    </style>
     <script defer src="mars.js"></script>
+
     <script defer src="weather.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Building dashboard with gird and flex</title>
   </head>
   
-  <body onload = 'pageLoad()'>
+  <body onload='pageLoad()'>
     
       <div class="grid-container">
 
@@ -27,19 +37,19 @@
                 <a class ="link" href = "javascript:showSection(0)">Home</a>
               </li>
               <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(2)" >Page 1</a>
+                <a class ="link" href = "javascript:showSection(1)" >Page 1</a>
               </li>
               <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(3)" >Page 2</a>
+                <a class ="link" href = "javascript:showSection(2)" >Page 2</a>
               </li>
               <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(1)" >Page 3</a>
+                <a class ="link" href = "javascript:showSection(3)" >Page 3</a>
               </li>
             </ul>
           </nav>
         </aside>
 
-      <main class="main">
+      <main class="main" id='Home'>
         <div class="main_overview">
           <div class="overview_card weather_box"></div>
           <div class="overview_card weather_box"></div>
@@ -71,7 +81,8 @@
         </div>
       </main>
     </div>
-
-
+    <div id='PageOne' class='pageClass'><h1>Page One</h1></div>
+    <div id='PageTwo' class='pageClass'><h1>Page Two</h1></div>
+    <div id='PageThree' class='pageClass'><h1>Page Three</h1></div>
   </body>
 </html>
