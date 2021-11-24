@@ -22,7 +22,7 @@ async function populate_weather_boxes() {
     title = document.createElement("div");
     value = document.createElement("div");
     title.textContent = data[i].sol + 49269;
-    value.textContent = "Readings From Gale Crater";
+    value.textContent = "Gale Crater";
     title.classList.add("date");
     value.classList.add("date_unit");
     value.classList.add("tiny");
