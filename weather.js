@@ -10,10 +10,9 @@ async function populate_weather_boxes() {
   let data = [];
   data.push(await get_weather());
   let current_sol = data[0].sol;
-  // Get three previous sol
+  // Get two previous sol
   data.push(await get_weather(current_sol - 1));
   data.push(await get_weather(current_sol - 2));
-  data.push(await get_weather(current_sol - 3));
   let weather_boxes = document.getElementsByClassName("weather_box");
   for (let i = 0; i < weather_boxes.length; ++i) {
     // High temperatures
