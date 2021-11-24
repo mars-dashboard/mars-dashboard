@@ -115,6 +115,13 @@ nav a:hover::before {
   align-items: center;
 }
 
+.main_overview > .background_cell {
+  flex-grow: 1;
+}
+.main_overview > .background_cell:first-child {
+  flex-grow: 3;
+}
+
 .background_cell {
   background-image: linear-gradient(
     30deg,
@@ -210,16 +217,16 @@ nav a:hover::before {
   font-weight: bold;
 }
 
-.background_cell:first-child {
+.main_cards > .background_cell:first-child {
   grid-area: card1;
 }
-.background_cell:nth-child(2) {
+.main_cards > .background_cell:nth-child(2) {
   grid-area: card2;
 }
-.background_cell:nth-child(3) {
+.main_cards > .background_cell:nth-child(3) {
   grid-area: card3;
 }
-.background_cell:nth-child(4) {
+.main_cards > .background_cell:nth-child(4) {
   grid-area: card4;
 }
 
