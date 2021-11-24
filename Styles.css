@@ -5,16 +5,16 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   font-size: 15px;
-  background-image: url("stars.jpeg");
+  background-image: url('stars.jpeg');
 }
 .grid-container {
   display: grid;
   grid-template-columns: 125px 1fr;
   grid-template-rows: 50px 2fr 1fr;
   grid-template-areas:
-    "aside main"
-    "aside main"
-    "aside main";
+    'aside main'
+    'aside main'
+    'aside main';
   height: 100vh;
 }
 
@@ -57,7 +57,7 @@ nav a {
 }
 
 nav a::before {
-  content: "";
+  content: '';
   display: block;
   background-color: rgb(255, 213, 166);
   height: 6px;
@@ -154,10 +154,10 @@ nav a:hover::before {
   /*grid-template-rows: 500px 200px 300px;*/
   grid-template-rows: 2fr 1fr 3fr;
   grid-template-areas:
-    "card1"
-    "card2"
-    "card3"
-    "card4";
+    'card1'
+    'card2'
+    'card3'
+    'card4';
   grid-gap: 10px;
 }
 .card {
@@ -242,9 +242,9 @@ nav a:hover::before {
     grid-template-columns: 150px 1fr;
     grid-template-rows: 50px 1fr 1fr;
     grid-template-areas:
-      "aside main"
-      "aside main"
-      "aside main";
+      'aside main'
+      'aside main'
+      'aside main';
     height: 100vh;
   }
 
@@ -261,8 +261,8 @@ nav a:hover::before {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 200px 400px;
     grid-template-areas:
-      "card1 card2 card3"
-      "card1 card4 card4";
+      'card1 card2 card3'
+      'card1 card4 card4';
     grid-gap: 10px;
   }
 }
@@ -327,4 +327,11 @@ p {
 .date {
   letter-spacing: 0.1em;
   font-size: 24px;
+}
+
+#viewDiv {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  width: 100%;
 }
