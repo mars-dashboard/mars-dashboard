@@ -334,7 +334,68 @@ p {
   font-size: 24px;
 }
 
-.weather_cell {
-  flex-grow: 1;
-  flex-shrink: 0;
+.weather_box {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.weather_box > .date {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.weather_box > .date_unit {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.weather_box > .high_title {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+}
+
+.weather_box > .high_value {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+}
+
+.weather_box > .low_title {
+  grid-column: 1 / 2;
+  grid-row: 3 / 4;
+}
+
+.weather_box > .low_value {
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+}
+
+.weather_box > .pressure_title {
+  grid-column: 1 / 2;
+  grid-row: 4 / 5;
+}
+
+.weather_box > .pressure_value {
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+}
+
+.weather_box > .atmo_title {
+  grid-column: 1 / 2;
+  grid-row: 5 / 6;
+}
+
+.weather_box > .atmo_value {
+  grid-column: 2 / 3;
+  grid-row: 5 / 6;
+}
+
+.weather_box > .uv_title {
+  grid-column: 1 / 2;
+  grid-row: 6 / 7;
+}
+
+.weather_box > .uv_value {
+  grid-column: 2 / 3;
+  grid-row: 6 / 7;
 }

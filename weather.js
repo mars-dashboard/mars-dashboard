@@ -15,49 +15,68 @@ async function populate_weather_boxes() {
   data.push(await get_weather(current_sol - 2));
   let weather_boxes = document.getElementsByClassName("weather_box");
   for (let i = 0; i < weather_boxes.length; ++i) {
+    let title;
+    let value;
+
+    // Date
+    title = document.createElement("div");
+    value = document.createElement("div");
+    title.textContent = data[i].sol + 49269;
+    value.textContent = data[i].season;
+    title.classList.add("date");
+    value.classList.add("date_unit");
+    weather_boxes[i].appendChild(title);
+    weather_boxes[i].appendChild(value);
+
     // High temperatures
-    let weather_cell = document.createElement("div");
-    weather_cell.classList.add("weather_cell");
-    let title = document.createElement("div");
-    let value = document.createElement("div");
-    title.textContent = "High";
-    value.textContent = data[i].max_temp + "C";
-    weather_cell.appendChild(title);
-    weather_cell.appendChild(value);
-    weather_boxes[i].appendChild(weather_cell);
+    title = document.createElement("div");
+    value = document.createElement("div");
+    title.textContent = "High Temp.";
+    value.textContent = data[i].max_temp + " C";
+    title.classList.add("high_title");
+    value.classList.add("high_value");
+    weather_boxes[i].appendChild(title);
+    weather_boxes[i].appendChild(value);
 
     // Low Temperatures
-    weather_cell = document.createElement("div");
-    weather_cell.classList.add("weather_cell");
     title = document.createElement("div");
     value = document.createElement("div");
-    title.textContent = "Low";
-    value.textContent = data[i].min_temp + "C";
-    weather_cell.appendChild(title);
-    weather_cell.appendChild(value);
-    weather_boxes[i].appendChild(weather_cell);
+    title.textContent = "Low Temp.";
+    value.textContent = data[i].min_temp + " C";
+    title.classList.add("low_title");
+    value.classList.add("low_value");
+    weather_boxes[i].appendChild(title);
+    weather_boxes[i].appendChild(value);
 
-    // Atmospheric Opacity
-    weather_cell = document.createElement("div");
-    weather_cell.classList.add("weather_cell");
+    // Pressure
     title = document.createElement("div");
     value = document.createElement("div");
-    title.textContent = "Clarity";
+    title.textContent = "Low Pressure";
+    value.textContent = data[i].pressure + "Pa";
+    title.classList.add("pressure_title");
+    value.classList.add("pressure_value");
+    weather_boxes[i].appendChild(title);
+    weather_boxes[i].appendChild(value);
+
+    // Atmospheric Opactity
+    title = document.createElement("div");
+    value = document.createElement("div");
+    title.textContent = "Atmos. Opacity";
     value.textContent = data[i].atmo_opacity;
-    weather_cell.appendChild(title);
-    weather_cell.appendChild(value);
-    weather_boxes[i].appendChild(weather_cell);
+    title.classList.add("atmo_title");
+    value.classList.add("atmo_value");
+    weather_boxes[i].appendChild(title);
+    weather_boxes[i].appendChild(value);
 
-    // UV Radiation
-    weather_cell = document.createElement("div");
-    weather_cell.classList.add("weather_cell");
+    //UV Irradiance
     title = document.createElement("div");
     value = document.createElement("div");
-    title.textContent = "UV Radiation";
+    title.textContent = "UV Irradiance";
     value.textContent = data[i].local_uv_irradiance_index;
-    weather_cell.appendChild(title);
-    weather_cell.appendChild(value);
-    weather_boxes[i].appendChild(weather_cell);
+    title.classList.add("uv_title");
+    value.classList.add("uv_value");
+    weather_boxes[i].appendChild(title);
+    weather_boxes[i].appendChild(value);
   }
 }
 
