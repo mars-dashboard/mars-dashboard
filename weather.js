@@ -18,6 +18,7 @@ async function populate_weather_boxes() {
   for (let i = 0; i < weather_boxes.length; ++i) {
     // High temperatures
     let weather_cell = document.createElement("div");
+    weather_cell.classList.add("weather_cell");
     let title = document.createElement("div");
     let value = document.createElement("div");
     title.textContent = "High";
@@ -28,6 +29,7 @@ async function populate_weather_boxes() {
 
     // Low Temperatures
     weather_cell = document.createElement("div");
+    weather_cell.classList.add("weather_cell");
     title = document.createElement("div");
     value = document.createElement("div");
     title.textContent = "Low";
@@ -38,6 +40,7 @@ async function populate_weather_boxes() {
 
     // Atmospheric Opacity
     weather_cell = document.createElement("div");
+    weather_cell.classList.add("weather_cell");
     title = document.createElement("div");
     value = document.createElement("div");
     title.textContent = "Clarity";
@@ -48,6 +51,7 @@ async function populate_weather_boxes() {
 
     // UV Radiation
     weather_cell = document.createElement("div");
+    weather_cell.classList.add("weather_cell");
     title = document.createElement("div");
     value = document.createElement("div");
     title.textContent = "UV Radiation";

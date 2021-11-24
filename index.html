@@ -10,59 +10,63 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>Building dashboard with gird and flex</title>
   </head>
-  
-  <body onload='pageLoad()'>
-    
-      <div class="grid-container">
 
-          <div class="menu-icon">
-            <strong> &#9776;</strong>
-          </div>
+  <body onload="pageLoad()">
+    <div class="grid-container">
+      <div class="menu-icon">
+        <strong> &#9776;</strong>
+      </div>
 
-          <aside class="aside">
-            <div class="aside_close-icon">
-              <strong>&times;</strong>
-            </div>
-          <nav>
-            <ul class="aside_list">
-              <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(0)">Home</a>
-              </li>
-              <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(1)" >Page 1</a>
-              </li>
-              <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(2)" >Page 2</a>
-              </li>
-              <li class="aside_list-item">
-                <a class ="link" href = "javascript:showSection(3)" >Page 3</a>
-              </li>
-            </ul>
-          </nav>
-        </aside>
+      <aside class="aside">
+        <div class="aside_close-icon">
+          <strong>&times;</strong>
+        </div>
+        <nav>
+          <ul class="aside_list">
+            <li class="aside_list-item">
+              <a class="link" href="javascript:showSection(0)">Home</a>
+            </li>
+            <li class="aside_list-item">
+              <a class="link" href="javascript:showSection(1)">Page 1</a>
+            </li>
+            <li class="aside_list-item">
+              <a class="link" href="javascript:showSection(2)">Page 2</a>
+            </li>
+            <li class="aside_list-item">
+              <a class="link" href="javascript:showSection(3)">Page 3</a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
 
-      <main class="main" id='Home'>
+      <main class="main" id="Home">
         <div class="main_overview">
-          <div class="overview_card weather_box"></div>
-          <div class="overview_card weather_box"></div>
-          <div class="overview_card weather_box"></div>
-          <div class="overview_card weather_box"></div>
+          <div class="background_cell">
+            <div class="overview_card time_box"></div>
+          </div>
+          <div class="background_cell">
+            <div class="overview_card weather_box"></div>
+          </div>
+          <div class="background_cell">
+            <div class="overview_card weather_box"></div>
+          </div>
+          <div class="background_cell">
+            <div class="overview_card weather_box"></div>
+          </div>
         </div>
 
         <div class="main_cards">
           <div class="card cardMarsPic" id="content"></div>
           <div class="card cardNews">
-           <form class="search" action ="">
-             <label for="">News:</label>
-             <input class="input" type="text"/>
-             <input type="submit" />
-           </form>
+            <form class="search" action="">
+              <label for="">News:</label>
+              <input class="input" type="text" />
+              <input type="submit" />
+            </form>
 
-          <div class="NewsContainter">
-            <ul class="news-list">
-            </ul>
-          </div>
-
+            <div class="NewsContainter">
+              <ul class="news-list"></ul>
+            </div>
           </div>
           <div class="card">
             <div id="mars-clock">
@@ -78,13 +82,13 @@
         </div>
       </main>
     </div>
-    <div id='PageOne' class='pageClass'>
+    <div id="PageOne" class="pageClass">
       <div class="content"></div>
     </div>
-    <div id='PageTwo' class='pageClass'>
+    <div id="PageTwo" class="pageClass">
       <div class="content"></div>
     </div>
-    <div id='PageThree' class='pageClass'>
+    <div id="PageThree" class="pageClass">
       <div class="content"></div>
     </div>
   </body>
