@@ -122,6 +122,7 @@ nav a:hover::before {
   border-radius: 6px;
   padding: 5px;
   flex-grow: 1;
+  display: flex;
 }
 
 .overview_card {
@@ -155,10 +156,11 @@ nav a:hover::before {
 }
 .card {
   padding: 20px;
-  border: 1px solid rgb(50, 49, 48);
+  border: 2px solid rgb(80, 187, 208);
   border-radius: 4px;
-  color: rgb(106, 30, 16);
-  background-color: white;
+  color: rgb(255, 213, 166);
+  background-color: rgba(54, 131, 146, 0.68);
+  flex-grow: 1;
 }
 
 /* overlay stuff*/
@@ -204,16 +206,16 @@ nav a:hover::before {
   font-weight: bold;
 }
 
-.card:first-child {
+.background_cell:first-child {
   grid-area: card1;
 }
-.card:nth-child(2) {
+.background_cell:nth-child(2) {
   grid-area: card2;
 }
-.card:nth-child(3) {
+.background_cell:nth-child(3) {
   grid-area: card3;
 }
-.card:nth-child(4) {
+.background_cell:nth-child(4) {
   grid-area: card4;
 }
 
