@@ -124,5 +124,4 @@ require([
     });
 
     view.ui.add(layerList, "top-right");
-
   });
