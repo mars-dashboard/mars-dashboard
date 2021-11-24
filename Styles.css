@@ -5,22 +5,17 @@ body {
   box-sizing: border-box;
   font-family: monospace;
   font-size: 15px;
-  background-image: url('stars.jpeg');
+  background-image: url("stars.jpeg");
 }
 .grid-container {
   display: grid;
   grid-template-columns: 125px 1fr;
   grid-template-rows: 50px 2fr 1fr;
   grid-template-areas:
-    'aside main'
-    'aside main'
-    'aside main';
+    "aside main"
+    "aside main"
+    "aside main";
   height: 100vh;
-}
-
-.aside {
-  grid-area: aside;
-  background-color: gray;
 }
 
 .main {
@@ -46,24 +41,25 @@ nav ul {
 nav li {
   display: inline-block;
   position: relative;
+  border: 2px solid rgb(80, 187, 208);
+  background-color: rgba(54, 131, 146, 0.68);
+  border-radius: 4px;
+  width: 65%;
+  margin: 5px;
 }
 
 nav a {
-  color: white;
+  color: rgb(255, 213, 166);
   text-decoration: none;
   text-transform: uppercase;
   font-size: 15px;
   width: 100%;
 }
 
-nav a:hover {
-  color: white;
-}
-
 nav a::before {
-  content: '';
+  content: "";
   display: block;
-  background-color: white;
+  background-color: rgb(255, 213, 166);
   height: 6px;
   width: 0%;
   position: absolute;
@@ -72,7 +68,7 @@ nav a::before {
 }
 
 nav a:hover::before {
-  width: 100%;
+  width: 80%;
 }
 
 /* flexing aside */
@@ -85,6 +81,14 @@ nav a:hover::before {
   overflow-y: auto;
   z-index: 2;
   transform: translateX(-245px);
+  grid-area: aside;
+  background-color: rgba(54, 131, 146, 0.68);
+  background-image: linear-gradient(
+    30deg,
+    rgb(50, 36, 77),
+    rgb(117, 59, 82),
+    rgb(189, 94, 68)
+  );
 }
 
 .aside.active {
@@ -107,26 +111,39 @@ nav a:hover::before {
 /* Layout for main content overview  and its cards*/
 .main_overview {
   display: flex;
-  flex-wrap: wrap;
+  flex-flow: row nowrap;
   align-items: center;
 }
 
-.overview_card {
-  flex-basis: 250px;
+.background_cell {
+  background-image: linear-gradient(
+    30deg,
+    rgb(50, 36, 77),
+    rgb(117, 59, 82),
+    rgb(189, 94, 68)
+  );
+  margin: 5px;
+  border-radius: 6px;
+  padding: 5px;
   flex-grow: 1;
-  margin: 10px 10px;
+  display: flex;
+}
+
+.overview_card {
   display: flex;
   flex-flow: column wrap;
+  flex-grow: 1;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
   /* background-color: seagreen; */
   height: 100px;
-  border: 1px solid rgb(70, 70, 79);
+  border: 2px solid rgb(80, 187, 208);
   border-radius: 4px;
-  color: rgb(62, 82, 59);
-  background-color: white;
+  color: rgb(255, 213, 166);
+  background-color: rgba(54, 131, 146, 0.68);
 }
+
 /* Layout for main-cards section // below main_overview */
 .main_cards {
   margin: 10px;
@@ -135,18 +152,19 @@ nav a:hover::before {
   /*grid-template-rows: 500px 200px 300px;*/
   grid-template-rows: 2fr 1fr 3fr;
   grid-template-areas:
-    'card1'
-    'card2'
-    'card3'
-    'card4';
+    "card1"
+    "card2"
+    "card3"
+    "card4";
   grid-gap: 10px;
 }
 .card {
   padding: 20px;
-  border: 1px solid rgb(50, 49, 48);
+  border: 2px solid rgb(80, 187, 208);
   border-radius: 4px;
-  color: rgb(106, 30, 16);
-  background-color: white;
+  color: rgb(255, 213, 166);
+  background-color: rgba(54, 131, 146, 0.68);
+  flex-grow: 1;
 }
 
 /* overlay stuff*/
@@ -192,16 +210,16 @@ nav a:hover::before {
   font-weight: bold;
 }
 
-.card:first-child {
+.background_cell:first-child {
   grid-area: card1;
 }
-.card:nth-child(2) {
+.background_cell:nth-child(2) {
   grid-area: card2;
 }
-.card:nth-child(3) {
+.background_cell:nth-child(3) {
   grid-area: card3;
 }
-.card:nth-child(4) {
+.background_cell:nth-child(4) {
   grid-area: card4;
 }
 
@@ -222,9 +240,9 @@ nav a:hover::before {
     grid-template-columns: 150px 1fr;
     grid-template-rows: 50px 1fr 1fr;
     grid-template-areas:
-      'aside main'
-      'aside main'
-      'aside main';
+      "aside main"
+      "aside main"
+      "aside main";
     height: 100vh;
   }
 
@@ -241,8 +259,8 @@ nav a:hover::before {
     grid-template-columns: 2fr 1fr 1fr;
     grid-template-rows: 200px 400px;
     grid-template-areas:
-      'card1 card2 card3'
-      'card1 card4 card4';
+      "card1 card2 card3"
+      "card1 card4 card4";
     grid-gap: 10px;
   }
 }
@@ -307,4 +325,9 @@ p {
 .date {
   letter-spacing: 0.1em;
   font-size: 24px;
+}
+
+.weather_cell {
+  flex-grow: 1;
+  flex-shrink: 0;
 }
