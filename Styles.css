@@ -157,7 +157,8 @@ nav a:hover::before {
     'card1'
     'card2'
     'card3'
-    'card4';
+    'card4'
+    'card5';
   grid-gap: 10px;
 }
 .card {
@@ -224,6 +225,9 @@ nav a:hover::before {
 .main_cards > .background_cell:nth-child(4) {
   grid-area: card4;
 }
+.main_cards > .background_cell:nth-child(5) {
+  grid-area: card5;
+}
 
 .cardNews {
   overflow: auto;
@@ -262,7 +266,8 @@ nav a:hover::before {
     grid-template-rows: 200px 400px;
     grid-template-areas:
       'card1 card2 card3'
-      'card1 card4 card4';
+      'card1 card4 card4'
+      'card5 card5 card5';
     grid-gap: 10px;
   }
 }

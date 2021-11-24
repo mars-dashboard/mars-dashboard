@@ -107,3 +107,19 @@ function retrieve(e) {
       console.log(error);
     });
 }
+
+var btn = document.getElementById("btn");
+
+btn.addEventListener("click", GenererPoids);
+
+function GenererPoids(){
+  var masse = document.getElementById("masse").value;
+  var gMars = 0.379;
+
+  var result = Math.round(masse * gMars);
+
+  document.getElementById("result").innerHTML = "weight on mars <br><span>" + result + "</span> kg";
+  
+}
+
+
