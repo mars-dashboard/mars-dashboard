@@ -22,9 +22,10 @@ async function populate_weather_boxes() {
     title = document.createElement("div");
     value = document.createElement("div");
     title.textContent = data[i].sol + 49269;
-    value.textContent = data[i].season;
+    value.textContent = "Readings From Gale Crater";
     title.classList.add("date");
     value.classList.add("date_unit");
+    value.classList.add("tiny");
     weather_boxes[i].appendChild(title);
     weather_boxes[i].appendChild(value);
 
