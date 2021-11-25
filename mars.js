@@ -108,7 +108,7 @@ function retrieve(e) {
     });
 }
 
-var btn = document.getElementById("btn");
+var btn = document.getElementById("btnC");
 
 btn.addEventListener("click", GenererPoids);
 
