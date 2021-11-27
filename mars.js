@@ -2,6 +2,7 @@ const sections = ["Home", "PageOne", "PageTwo", "PageThree", "PageFour"];
 function pageLoad() {
   //alert("pageLoad");
   showSection(0);
+  imageEvent();
 }
 function showSection(sectionIdx) {
   sections.forEach((section, idx) => {
