@@ -48,7 +48,7 @@ async function sendAPIRequest() {
 function usaApiData(data) {
   document.querySelector(
     "#content"
-  ).innerHTML = `<img src="${data.photos[imageIndex].img_src}">`;
+  ).innerHTML = `<img alt="dayimage" src="${data.photos[imageIndex].img_src}">`;
 }
 
 async function sendImageRequest() {
@@ -64,7 +64,7 @@ async function sendImageRequest() {
 function useImageData(data) {
   document.querySelector(
     "#imagecontent"
-  ).innerHTML += `<img src="${data.url}">`;
+  ).innerHTML += `<img alt="photo" src="${data.url}">`;
   document.querySelector("#text1").innerHTML += data.explanation;
 }
 
