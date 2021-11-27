@@ -240,13 +240,23 @@ nav a:hover::before {
 
 #input {
   text-decoration: none;
-  color: #ffffff;
+  color: linear-gradient(
+    30deg,
+    rgb(50, 36, 77),
+    rgb(117, 59, 82),
+    rgb(189, 94, 68)
+  );
 }
 
 .cardNews .search {
   display: block;
   text-align: center;
   margin-bottom: 2px;
+}
+
+#news-list {
+  text-decoration: none;
+  color: white;
 }
 
 /* responsive layout */
@@ -375,7 +385,12 @@ p {
 
 #mars-clock {
   margin-top: 10%;
-  color: darkblue;
+  color: linear-gradient(
+    30deg,
+    rgb(50, 36, 77),
+    rgb(117, 59, 82),
+    rgb(189, 94, 68)
+  );
 }
 .time {
   letter-spacing: 0.05em;
