@@ -5,9 +5,10 @@ function imageEvent() {
 
     button.addEventListener("click", function () {
         var date = datePicker.value;
+        var api_key='8w2DmOrxvNdghKOLw0yFdBW0JiXptiUTXd1OZkcS';
         console.log(date)
         //var url = `https://api.nasa.gov/mars-photos/api/v1/rovers/perseverance/photos?earth_date=${date}&api_key=DEMO_KEY`;
-        const url=`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=DEMO_KEY`;
+        const url=`https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=${date}&api_key=8w2DmOrxvNdghKOLw0yFdBW0JiXptiUTXd1OZkcS`;
         console.log(url)
         const myHeaders =
         {
