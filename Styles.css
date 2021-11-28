@@ -484,8 +484,9 @@ p {
   color: rgb(255, 213, 166);
   background-color: rgba(54, 131, 146, 0.68);
   flex-grow: 1;
-  margin-top: 1%;
+  margin-top: 10%;
   margin-bottom: 1%;
+  margin-right: 1%;
 }
 
 #button {
@@ -508,4 +509,10 @@ p {
   border: none;
   outline: 0;
   margin: 2px;
+}
+
+@media screen and(max-width: 780px) {
+  #img {
+    width: 200px;
+  }
 }
