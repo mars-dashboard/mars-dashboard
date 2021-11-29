@@ -28,7 +28,7 @@ async function populate_weather_boxes() {
   data.push(await get_weather());
   let current_sol = data[0].sol;
   // Get twenty previous sol
-  for (let i = 1; i <= 20; ++i) {
+  for (let i = 1; i <= 10; ++i) {
     data.push(await get_weather(current_sol - i));
   }
 
