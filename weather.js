@@ -5,19 +5,37 @@ async function get_weather(sol = "") {
   return data;
 }
 
-let make_chart = (data) => {
+let make_chart = (date_list, high_data, low_data) => {
   let chart = document.getElementById("line-chart");
 
   new Chart(chart, {
     type: "line",
     data: {
+      labels: date_list,
       datasets: [
         {
           label: "High Temperatures",
-          data: data,
+          data: high_data,
+          borderWidth: 1,
+        },
+        {
+          label: "Low Temperatures",
+          data: low_data,
           borderWidth: 1,
         },
       ],
+    },
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              min: -100,
+              max: 0,
+            },
+          },
+        ],
+      },
     },
   });
 };
@@ -99,11 +117,18 @@ async function populate_weather_boxes() {
     weather_boxes[i].appendChild(value);
   }
   // Create list of temperatures
-  chart_data = [];
+  date_list = [];
+  high_data = [];
   for (let i = 0; i < data.length; ++i) {
-    chart_data.push({ x: data[i].sol + 49269, y: data[i].max_temp });
+    high_data.push(data[i].max_temp);
+    date_list.push(data[i].sol + 49269);
   }
-  make_chart(chart_data);
+  low_data = [];
+  for (let i = 0; i < data.length; ++i) {
+    low_data.push(data[i].min_temp);
+  }
+
+  make_chart(date_list, high_data, low_data);
 }
 
 populate_weather_boxes();
