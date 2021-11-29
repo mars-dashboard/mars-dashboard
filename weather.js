@@ -5,14 +5,33 @@ async function get_weather(sol = "") {
   return data;
 }
 
+let make_chart = (data) => {
+  let chart = document.getElementById("line-chart");
+
+  new Chart(chart, {
+    type: "line",
+    data: {
+      datasets: [
+        {
+          label: "High Temperatures",
+          data: data,
+          borderWidth: 1,
+        },
+      ],
+    },
+  });
+};
+
 async function populate_weather_boxes() {
   // Get current sol's data
   let data = [];
   data.push(await get_weather());
   let current_sol = data[0].sol;
-  // Get two previous sol
-  data.push(await get_weather(current_sol - 1));
-  data.push(await get_weather(current_sol - 2));
+  // Get twenty previous sol
+  for (let i = 1; i <= 20; ++i) {
+    data.push(await get_weather(current_sol - i));
+  }
+
   let weather_boxes = document.getElementsByClassName("weather_box");
   for (let i = 0; i < weather_boxes.length; ++i) {
     let title;
@@ -79,6 +98,12 @@ async function populate_weather_boxes() {
     weather_boxes[i].appendChild(title);
     weather_boxes[i].appendChild(value);
   }
+  // Create list of temperatures
+  chart_data = [];
+  for (let i = 0; i < data.length; ++i) {
+    chart_data.push({ x: data[i].sol + 49269, y: data[i].max_temp });
+  }
+  make_chart(chart_data);
 }
 
 populate_weather_boxes();
