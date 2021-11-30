@@ -169,6 +169,10 @@ nav a:hover::before {
   flex-grow: 1;
 }
 
+.card.line-box {
+  padding: 0px;
+}
+
 /* overlay stuff*/
 .image_overlay1 {
   margin-top: 0%;

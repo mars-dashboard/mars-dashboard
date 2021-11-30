@@ -14,24 +14,46 @@ let make_chart = (date_list, high_data, low_data) => {
       labels: date_list,
       datasets: [
         {
-          label: "High Temperatures",
+          label: "High Temperature",
           data: high_data,
+          borderColor: "red",
           borderWidth: 1,
         },
         {
-          label: "Low Temperatures",
+          label: "Low Temperature",
           data: low_data,
+          borderColor: "blue",
           borderWidth: 1,
         },
       ],
     },
     options: {
+      maintainAspectRatio: false,
+      legend: {
+        labels: {
+          fontColor: "rgba(255, 213, 116, .8)",
+        },
+      },
       scales: {
         yAxes: [
           {
+            gridLines: {
+              color: "rgba(255, 213, 116, .25)",
+            },
             ticks: {
+              fontColor: "rgba(255, 213, 116, .8)",
               min: -100,
               max: 0,
+            },
+          },
+        ],
+        xAxes: [
+          {
+            gridLines: {
+              color: "rgba(255, 213, 116, .25)",
+            },
+            ticks: {
+              fontColor: "rgba(255, 213, 116, .8)",
             },
           },
         ],

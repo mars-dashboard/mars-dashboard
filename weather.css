@@ -64,6 +64,18 @@
   grid-row: 6 / 7;
 }
 
+#line-chart {
+  /*
+  background-image: linear-gradient(
+    30deg,
+    rgb(50, 36, 77),
+    rgb(117, 59, 82),
+    rgb(189, 94, 68)
+  );
+  */
+  background-color: rgb(50, 36, 77);
+}
+
 .time_box {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
