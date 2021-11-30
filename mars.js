@@ -85,7 +85,7 @@ function retrieve(e) {
   const apiKey = "7cccceb97d484307a45768488a0e7c3f";
   let topic = input.value;
 
-  let url = `https://newsapi.org/v2/everything?q=${topic}&from=2021-11-15&sortBy=publishedAt&apiKey=7cccceb97d484307a45768488a0e7c3f`;
+  let url = `https://api.nytimes.com/svc/search/v2/articlesearch.json?q=${topic}&api-key=%20Zudy5h7Ytkm4pedrotD5r3fDvDxh5cZP`;
 
   fetch(url)
     .then((res) => {
@@ -94,12 +94,12 @@ function retrieve(e) {
     .then((data) => {
       console.log(data);
 
-      data.articles.forEach((article) => {
+      data.response.docs.forEach((article) => {
         let li = document.createElement("li");
         let a = document.createElement("a");
-        a.setAttribute("href", article.url);
+        a.setAttribute("href", article.web_url);
         a.setAttribute("targer", "_blank");
-        a.textContent = article.title;
+        a.textContent = article.headline.main;
         li.appendChild(a);
         newsList.appendChild(li);
       });
@@ -113,14 +113,12 @@ var btn = document.getElementById("btnC");
 
 btn.addEventListener("click", GenererPoids);
 
-function GenererPoids(){
+function GenererPoids() {
   var masse = document.getElementById("masse").value;
   var gMars = 0.379;
 
   var result = Math.round(masse * gMars);
 
-  document.getElementById("result").innerHTML = "weight on mars <br><span>" + result + "</span> kg";
-  
+  document.getElementById("result").innerHTML =
+    "weight on mars <br><span>" + result + "</span> kg";
 }
-
-
